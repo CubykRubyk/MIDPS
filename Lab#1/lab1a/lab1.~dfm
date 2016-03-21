@@ -1,0 +1,83 @@
+object Form1: TForm1
+  Left = 280
+  Top = 132
+  Width = 420
+  Height = 320
+  Caption = 'MIDPS 1- A'
+  Color = clBtnFace
+  Constraints.MaxHeight = 320
+  Constraints.MaxWidth = 420
+  Constraints.MinHeight = 320
+  Constraints.MinWidth = 420
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 120
+    Top = 16
+    Width = 41
+    Height = 16
+    Alignment = taCenter
+    Caption = 'Label1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 136
+    Top = 40
+    Width = 32
+    Height = 13
+    Alignment = taCenter
+    Caption = 'Label2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 48
+    Top = 72
+    Width = 75
+    Height = 25
+    Caption = 'UP'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 48
+    Top = 160
+    Width = 75
+    Height = 25
+    Caption = 'DOWN'
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+  object Edit1: TEdit
+    Left = 160
+    Top = 120
+    Width = 89
+    Height = 21
+    TabOrder = 2
+    Text = 'Edit1'
+  end
+  object Button3: TButton
+    Left = 304
+    Top = 240
+    Width = 75
+    Height = 25
+    Caption = 'EXIT'
+    TabOrder = 3
+    OnClick = Button3Click
+  end
+end
