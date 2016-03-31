@@ -1,3 +1,1 @@
-#Lab2
-
-Tema: VERSION CONTROL SYSTEMS ȘI MODUL DE SETARE A UNUI SERVER
+#Medii Interactive de Dezvoltare a Produselor Soft LAB #4
