@@ -15,15 +15,15 @@ $dbuser = "root";
 $dbpass = "";
 
 //	Connection
-global $tutorial_db;
+global $search_db;
 
-$tutorial_db = new mysqli();
-$tutorial_db->connect($dbhost, $dbuser, $dbpass, $dbname);
-$tutorial_db->set_charset("utf8");
+$search_db = new mysqli();
+$search_db->connect($dbhost, $dbuser, $dbpass, $dbname);
+$search_db->set_charset("utf8");
 
 //	Check Connection
-if ($tutorial_db->connect_errno) {
-    printf("Connect failed: %s\n", $tutorial_db->connect_error);
+if ($search_db->connect_errno) {
+    printf("Connect failed: %s\n", $search_db->connect_error);
     exit();
 }
 
@@ -42,7 +42,7 @@ $html .= '</li>';
 
 // Get Search
 $search_string = preg_replace("/[^A-Za-z0-9]/", " ", $_POST['query']);
-$search_string = $tutorial_db->real_escape_string($search_string);
+$search_string = $search_db->real_escape_string($search_string);
 
 // Check Length More Than One Character
 if (strlen($search_string) >= 1 && $search_string !== ' ') {
@@ -50,7 +50,7 @@ if (strlen($search_string) >= 1 && $search_string !== ' ') {
 	$query = 'SELECT * FROM blog_posts WHERE postCont LIKE "%'.$search_string.'%" OR postTitle LIKE "%'.$search_string.'%"';
 
 	// Do Search
-	$result = $tutorial_db->query($query);
+	$result = $search_db->query($query);
 	while($results = $result->fetch_array()) {
 		$result_array[] = $results;
 	}
@@ -90,22 +90,5 @@ if (strlen($search_string) >= 1 && $search_string !== ' ') {
 }
 
 
-/*
-// Build Function List (Insert All Functions Into DB - From PHP)
 
-// Compile Functions Array
-$functions = get_defined_functions();
-$functions = $functions['internal'];
-
-// Loop, Format and Insert
-foreach ($functions as $function) {
-	$function_name = str_replace("_", " ", $function);
-	$function_name = ucwords($function_name);
-
-	$query = '';
-	$query = 'INSERT INTO search SET id = "", function = "'.$function.'", name = "'.$function_name.'"';
-
-	$tutorial_db->query($query);
-}
-*/
 ?>
