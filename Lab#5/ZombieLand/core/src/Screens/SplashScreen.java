@@ -29,7 +29,7 @@ public class SplashScreen implements Screen {
 
     @Override
     public void show() {
-        sprite = new Sprite(AssetLoader.logo);
+       sprite = new Sprite(AssetLoader.logo);
         sprite.setColor(1, 1, 1, 0);
 
         float width = Gdx.graphics.getWidth();
